@@ -1,6 +1,5 @@
 package puzzles.twostacks;
 
-import java.util.Set;
 
 public class QueenProblem {
 
