@@ -1,5 +1,10 @@
 package puzzles.twostacks;
 
+/**
+ * Write a method to count the number of 2's between 0 and n.
+ * @author krzysztofbarczynski
+ *
+ */
 public class CountNumbersWithDigit {
 
 	private int searchDigit = 2;
