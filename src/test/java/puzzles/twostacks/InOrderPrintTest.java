@@ -17,6 +17,8 @@ public class InOrderPrintTest {
 	
 	@Before
 	public void setUpStreams() {
+		outContent.reset();
+		errContent.reset();
 	    System.setOut(new PrintStream(outContent));
 	    System.setErr(new PrintStream(errContent));
 	}
@@ -46,7 +48,7 @@ public class InOrderPrintTest {
 	
 	boolean outEquals(String what) {
 		String out = outContent.toString();
-		return out.equals(what);
+		return out.equals(what + "\n");
 	}
 
 }

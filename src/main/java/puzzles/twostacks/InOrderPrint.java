@@ -19,7 +19,7 @@ public class InOrderPrint implements PrintMe{
 	public StringBuilder printAsString(BTree bTree) {
 		StringBuilder sb = new StringBuilder();
 		if (bTree == null) {
-			sb.append("null");
+			sb.append("");
 		} else {
 			printToBuffer(bTree, sb);
 		}
