@@ -46,12 +46,12 @@ public class CountNumbersWithDigit {
 		return result;
 	}
 
-	public int zeroIfLessThenDigit1Otherwise(int digitValue) {
+	private int zeroIfLessThenDigit1Otherwise(int digitValue) {
 		return searchDigit > digitValue ? 0 : 1;
 
 	}
 
-	public int[] numberAsArray(int number) {
+	private int[] numberAsArray(int number) {
 		String asString = Integer.toString(number);
 		int[] asArray = new int[asString.length()];
 		for (int i = 0; i < asArray.length; i++) {
@@ -60,7 +60,7 @@ public class CountNumbersWithDigit {
 		return asArray;
 	}
 
-	public int arrayToNumber(int[] digits, int maxIndex) {
+	private int arrayToNumber(int[] digits, int maxIndex) {
 		int result = 0;
 		for (int k = maxIndex; k >= 0; k--) {
 			result = 10 * result + digits[k];
