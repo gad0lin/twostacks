@@ -19,5 +19,4 @@ public class FibonnaciTest {
 			assertTrue(fibs[i] == f.fib(i));
 		}
 	}
-
 }
