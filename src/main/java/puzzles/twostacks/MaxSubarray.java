@@ -1,11 +1,12 @@
 package puzzles.twostacks;
+
 import static puzzles.twostacks.Utils.getAllMax;
 
-
 /**
- * Maximum subarray problem.
+ * Maximum sub array problem.
+ * 
  * @author krzysztofbarczynski
- *
+ * 
  */
 public class MaxSubarray {
 
@@ -70,6 +71,7 @@ public class MaxSubarray {
 		public int compareTo(Solution o) {
 			return Integer.compare(sum, o.sum);
 		}
+
 		@Override
 		public String toString() {
 			return "{" + sum + " - " + range;
@@ -109,11 +111,51 @@ public class MaxSubarray {
 		private int getSize() {
 			return right - left + 1;
 		}
-		
+
 		@Override
 		public String toString() {
 			// TODO Auto-generated method stub
 			return "[" + left + "," + right + "]";
 		}
+	}
+
+	public Solution getMaxSubArrayLin(Integer[] arr) {
+		return getMaxSum(arr);
+
+	}
+
+	private Solution getMaxSum(Integer[] arr) {
+		int sum = 0;
+		int maxSum = 0;
+		for (int i = 0; i < arr.length; i++) {
+			sum += arr[i];
+			if (sum < 0) {
+				sum = 0;
+			}
+			maxSum = Math.max(maxSum, sum);
+		}
+
+		if (maxSum == 0) {
+			Integer max = Utils.getAllMax(arr);
+			int indexOf = Utils.indexOf(max, arr);
+			return new Solution(new Range(indexOf, indexOf), max);
+		} else {
+			sum = 0;
+			for (int i = 0; i < arr.length; i++) {
+				sum += arr[i];
+				if (sum == maxSum) {
+					int end = i;
+					do {
+						sum -= arr[i--];
+					} while (sum != 0);
+					return new Solution(new Range(i + 1, end), maxSum);
+
+				}
+				if (sum < 0) {
+					sum = 0;
+				}
+			}
+		}
+		return null;
 	}
 }
