@@ -20,6 +20,11 @@ public class SwapNumbers {
 			second = first ^ second;
 			first = first ^ second;
 		}
+		
+
+		public void invertWithoutXOR() {
+			second = first + second - (first=second);
+		}
 
 		public int getFirst() {
 			return first;

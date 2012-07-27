@@ -29,12 +29,18 @@ public class SwapNumbersTest {
 	
 	void checkInvert(int first, int second) {
 		SwapNumbers sn = new SwapNumbers(first, second);
-		assertTrue(sn.getFirst() == first);
-		assertTrue(sn.getSecond() == second);
+		eq(sn,first,second);
 		sn.invert();
-		assertTrue(sn.getFirst() == second);
-		assertTrue(sn.getSecond() == first);
+		eq(sn,second,first);
 		sn.invert();
+		eq(sn,first,second);
+		sn.invertWithoutXOR();
+		eq(sn,second,first);
+		sn.invertWithoutXOR();
+		eq(sn,first,second);
+	}
+	
+	private void eq(SwapNumbers sn, int first, int second) {
 		assertTrue(sn.getFirst() == first);
 		assertTrue(sn.getSecond() == second);
 	}
