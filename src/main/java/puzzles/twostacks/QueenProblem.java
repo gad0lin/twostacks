@@ -48,10 +48,4 @@ public class QueenProblem {
 				|| columns[i] - (column - i) == columns[column];
 	}
 
-	private void placeZeros(int[] columns, int column) {
-		for (int i = column; i < columns.length; i++) {
-			columns[column] = 0;
-		}
-	}
-
 }

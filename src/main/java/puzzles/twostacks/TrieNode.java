@@ -6,8 +6,6 @@ import java.util.Map.Entry;
 public class TrieNode {
 	private HashMap<Character, TrieNode> childrens = new HashMap<Character, TrieNode>();
 
-	private static TrieNode LEAF = new TrieNode();
-
 	public TrieNode() {
 	}
 
