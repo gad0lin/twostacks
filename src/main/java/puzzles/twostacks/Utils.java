@@ -24,6 +24,7 @@ public class Utils {
 		return max;
 	}
 
+	@SafeVarargs
 	public static <T extends Comparable<? super T>> int indexOf(T elem,
 			T... elements) {
 		for (int i = 0; i < elements.length; i++) {
