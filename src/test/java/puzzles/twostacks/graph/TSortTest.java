@@ -12,8 +12,6 @@ import org.mockito.Spy;
 
 public class TSortTest {
 
-	@Spy
-	Node node = new Node(1);
 
 	TSort tsort = new TSort();
 
