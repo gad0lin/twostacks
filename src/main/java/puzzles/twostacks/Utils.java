@@ -34,4 +34,13 @@ public class Utils {
 		}
 		return -1;
 	}
+
+	public static int[] getArrayWithConecutiveNumbers(int first, int last) {
+		int[] arr = new int[last + 1];
+		for (int k = 0; k < arr.length; k++) {
+			arr[k] = first + k;
+		}
+		return arr;
+	}
+
 }

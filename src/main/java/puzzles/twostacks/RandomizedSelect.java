@@ -1,6 +1,6 @@
 package puzzles.twostacks;
 
-public class RandomizedSelect {
+public class RandomizedSelect implements Selector{
 
 	private static final int NOT_FOUND = -1;
 	private int[] array;

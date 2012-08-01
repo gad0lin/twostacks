@@ -25,7 +25,6 @@ public class GeneratePermutationsTest {
 	@Test
 	public void shouldFind6PermutationsFor3Element() {
 		java.util.List<Integer[]> list = getPermutations(3);
-		System.out.println(list.size());
 		assertTrue(list.size() == 6);
 		assertTrue(Arrays.equals(list.get(0), new Integer[] { 0, 1, 2 }));
 		assertTrue(Arrays.equals(list.get(1), new Integer[] { 0, 2, 1 }));

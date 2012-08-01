@@ -1,6 +1,6 @@
 package puzzles.twostacks;
 
-import java.util.Random;
+import org.apache.commons.lang.ArrayUtils;
 
 public class Partitioner {
 
@@ -8,17 +8,29 @@ public class Partitioner {
 	int leftBound;
 	int rightBound;
 
+	public Partitioner(int[] arr) {
+		this(arr, 0, arr.length);
+	}
+
 	public Partitioner(int[] arr, int left, int right) {
 		this.arr = arr;
 		this.leftBound = left;
 		this.rightBound = right;
 	}
 
+	public int partition(int val) {
+		int indexOfValue = ArrayUtils.indexOf(arr, val);
+		swapValues(leftBound, indexOfValue);
+		return partition();
+	}
+
 	public int partition() {
 		int val = arr[leftBound];
 		int left = leftBound;
 		int right = rightBound;
-
+		if (left == right) {
+			return left;
+		}
 		while (true) {
 			while ((arr[right] >= val && left != right)) {
 				right--;

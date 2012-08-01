@@ -17,7 +17,6 @@ public class CountNumbersWithDigitTest {
 
 	@Test
 	public void shouldCount2DigitNo() {
-		System.out.println(cnwd.count(10));
 		assertInRange(10, 11, 1);
 		assertInRange(12, 19, 2);
 		assertInRange(20, 20, 3);
