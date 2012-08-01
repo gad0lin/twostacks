@@ -37,7 +37,6 @@ public class BTree {
 	
 	
 	public void print() {
-		System.out.println("dupa");
 		printMe.print(this);
 	}
 	

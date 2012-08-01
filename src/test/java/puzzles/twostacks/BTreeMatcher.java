@@ -20,7 +20,6 @@ public class BTreeMatcher  extends TypeSafeMatcher<BTree>{
 
 	@Override
 	public boolean matchesSafely(BTree item) {
-		System.out.println(item);
 		return comparator.areEqual(btree, item);
 	}
 

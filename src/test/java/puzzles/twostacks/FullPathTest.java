@@ -37,7 +37,6 @@ public class FullPathTest {
 	}
 	@Test
 	public void shouldParseSingleRootWithMixDots() {
-		System.out.println(fp.getFullPath("/a/.././b/c/../d"));
 		assertTrue(fp.getFullPath("/a/.././b/c/../d").equals("/b/d"));
 	}
 }

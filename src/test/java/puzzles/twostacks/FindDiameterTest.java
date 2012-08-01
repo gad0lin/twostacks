@@ -28,28 +28,24 @@ public class FindDiameterTest {
 	@Test
 	public void shouldReturn2for2Nodes() {
 		BTree btree = new BTree(new BTree(),null);
-		System.out.println(findDiameter.findDemeter(btree));
 		assertTrue(1 == findDiameter.findDemeter(btree));
 	}
 	
 	@Test
 	public void shouldReturn3for2Nodes() {
 		BTree btree = new BTree(new BTree(new BTree(),null),null);
-		System.out.println(findDiameter.findDemeter(btree));
 		assertTrue(2 == findDiameter.findDemeter(btree));
 	}
 	
 	@Test
 	public void shouldReturn3for2NodesBalanced() {
 		BTree btree = new BTree(new BTree(),new BTree());
-		System.out.println(findDiameter.findDemeter(btree));
 		assertTrue(2 == findDiameter.findDemeter(btree));
 	}
 	
 	@Test
 	public void shouldReturn4when5NodesWithDiameterInChild() {
 		BTree btree = new BTree(new BTree(new BTree(new BTree(), null),new BTree(new BTree(),null)),null);
-		System.out.println(findDiameter.findDemeter(btree));
 		assertTrue(4 == findDiameter.findDemeter(btree));
 	}
 	

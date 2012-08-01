@@ -15,21 +15,18 @@ public class ListTest {
 	@Test
 	public void shouldEncode1Number() {
 		List list = new List("1");
-		System.out.println(list.toString());
 		assertTrue(list.toString().equals("1"));
 	}
 	
 	@Test
 	public void shouldEncodeInteger1Number() {
 		List list = new List(1);
-		System.out.println(list.toString());
 		assertTrue(list.toString().equals("1"));
 	}
 	
 	@Test
 	public void shouldEncode2DigitNum() {
 		List list = new List("12");
-		System.out.println(list.toString());
 		assertTrue(list.toString().equals("12"));
 	}
 	

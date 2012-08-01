@@ -33,14 +33,12 @@ public class RabinKarpTest {
 	@Test
 	public void shouldFindThreeCharPatternAtWhenDifferentChars() {
 		RabinKarp rk = new RabinKarp("bababc", "abc");
-		System.out.println(rk.getPatternIndex());
 		assertTrue(rk.getPatternIndex() == 3);
 	}
 	
 	@Test
 	public void shouldFindFourCharPatternAtWhenDifferentChars() {
 		RabinKarp rk = new RabinKarp("bababc", "babc");
-		System.out.println(rk.getPatternIndex());
 		assertTrue(rk.getPatternIndex() == 2);
 	}
 }
