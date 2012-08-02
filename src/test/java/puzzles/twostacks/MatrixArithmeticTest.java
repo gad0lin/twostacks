@@ -1,0 +1,24 @@
+package puzzles.twostacks;
+
+import org.junit.Test;
+
+public class MatrixArithmeticTest {
+
+	MatrixArithmetic ma = new MatrixArithmetic() {
+		@Override
+		Matrix multiply(Matrix a, Matrix b) {
+			return null;
+		}
+	};
+
+	@Test
+	public void test() {
+		int[][] arr = new int[][] { { 1, 2, 3 }, { 4, 5, 6 } };
+		int[][] arr2 = new int[][] { { 1, 2, 3 }, { 4, 5, 6 } };
+		int[][] arr3 = new int[][] { { 2, 4, 6 }, { 8, 10, 12 } };
+		Matrix m1 = new Matrix(arr);
+		Matrix m2 = new Matrix(arr2);
+		Matrix m3 = new Matrix(arr3);
+		m3.equals(ma.add(m1, m2));
+	}
+}
