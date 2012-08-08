@@ -1,21 +1,24 @@
-package puzzles.twostacks;
+package puzzles.twostacks.matrix;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import puzzles.twostacks.matrix.Matrix;
 
 public class MatrixTest {
 
 	@Test
 	public void testElements() {
 		int[][] arr = new int[][] { { 1, 2, 3 }, { 4, 5, 6 } };
-		Matrix m = new Matrix(arr);
-		assertTrue(m.getElement(0, 0) == 1);
-		assertTrue(m.getElement(0, 1) == 2);
-		assertTrue(m.getElement(0, 2) == 3);
-		assertTrue(m.getElement(1, 0) == 4);
-		assertTrue(m.getElement(1, 1) == 5);
-		assertTrue(m.getElement(1, 2) == 6);
+		IMatrix m = new Matrix(arr);
+		Position p = new Position(0, 0);
+		for (int row = 0; row < arr.length; row++) {
+			for (int column = 0; column < arr[0].length; column++) {
+				p.setRow(row).setColumn(column);
+				assertTrue(m.getValue(p) == arr[row][column]);
+			}
+		}
 		assertTrue(m.getRowCount() == 2);
 		assertTrue(m.getColumnCount() == 3);
 	}
@@ -23,7 +26,7 @@ public class MatrixTest {
 	@Test
 	public void shouldExecuteEqual() {
 		int[][] arr = new int[][] { { 1, 2, 3 }, { 4, 5, 6 } };
-		Matrix m = new Matrix(arr);
+		IMatrix m = new Matrix(arr);
 
 		assertTrue(m.equals(m));
 
