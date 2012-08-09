@@ -1,9 +1,13 @@
 package puzzles.twostacks.matrix;
 
 public class RegionMatrix implements IMatrix, ISquarMatrix {
-	private Position start;
+	private Position start = new Position();
 	private Span span;
 	private IMatrix matrix;
+
+	public RegionMatrix() {
+		matrix = new Matrix();
+	}
 
 	public RegionMatrix(IMatrix m, Position start, Span end) {
 		this.matrix = m;
@@ -20,7 +24,8 @@ public class RegionMatrix implements IMatrix, ISquarMatrix {
 		if (isValid(p)) {
 			return matrix.getValue(getShiftedPosition(p));
 		}
-		throw new IllegalArgumentException("Invalid getValue Passed (" + p.toString() + ") ");
+		throw new IllegalArgumentException("Invalid getValue Passed ("
+				+ p.toString() + ") ");
 	}
 
 	private boolean isValid(Position p) {
@@ -55,6 +60,7 @@ public class RegionMatrix implements IMatrix, ISquarMatrix {
 	@Override
 	public void setValues(int[][] values) {
 		matrix.setValues(values);
+		span = new Span(matrix.getRowCount(), matrix.getColumnCount());
 	}
 
 	@Override

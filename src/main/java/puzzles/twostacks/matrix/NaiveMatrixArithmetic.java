@@ -1,9 +1,9 @@
 package puzzles.twostacks.matrix;
 
-public class NaiveMatrixArithmetic extends MatrixArithmetic {
+public class NaiveMatrixArithmetic implements MatrixArithmetic {
 
 	@Override
-	IMatrix multiply(IMatrix a, IMatrix b) {
+	public IMatrix multiply(IMatrix a, IMatrix b) {
 		Position left = new Position();
 		Position right = new Position();
 		int[][] res = new int[a.getRowCount()][b.getColumnCount()];

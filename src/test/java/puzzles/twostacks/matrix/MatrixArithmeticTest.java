@@ -9,7 +9,7 @@ public class MatrixArithmeticTest {
 
 	MatrixArithmetic ma = new MatrixArithmetic() {
 		@Override
-		IMatrix multiply(IMatrix a, IMatrix b) {
+		public IMatrix multiply(IMatrix a, IMatrix b) {
 			return null;
 		}
 	};
@@ -22,6 +22,6 @@ public class MatrixArithmeticTest {
 		Matrix m1 = new Matrix(arr);
 		Matrix m2 = new Matrix(arr2);
 		IMatrix m3 = new Matrix(arr3);
-		m3.equals(MatrixArithmetic.add(m1, m2));
+		m3.equals(BasicOperations.add(m1, m2));
 	}
 }
